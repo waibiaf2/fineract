@@ -22,6 +22,7 @@ services:
   fineract:
     # user: "${FINERACT_USER}:${FINERACT_GROUP}"
     image: ${IMAGE_NAME:-apache/fineract:latest}
+    restart: always
     volumes:
       - ${PWD}/config/docker/logback/logback-override.xml:/app/logback-override.xml
       - ${PWD}/config/docker/aws/etc/credentials:/etc/aws/credentials:ro
